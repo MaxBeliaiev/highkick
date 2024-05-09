@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Bebasneubold;
+    src: url("/fonts/bebasneubold.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Myriad;
+    src: url("/fonts/myriad-roman.otf") format('opentype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Bebasneubold;
+    src: url("/fonts/bebasneubolditalic.otf") format('opentype');
+    font-style: italic;
+    font-weight: 700;
+}
+
