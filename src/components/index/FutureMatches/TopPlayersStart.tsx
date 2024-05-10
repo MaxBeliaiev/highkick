@@ -18,7 +18,7 @@ export function TopPlayersStart({ data }: { data: IPlayersData[] }) {
       <div className="relative">
         <HeadingLabel className=" w-[538px] sm:w-full" />
         <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-          Top Players Start
+          Top Players Stats
         </h3>
       </div>
 

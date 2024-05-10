@@ -35,7 +35,7 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
           {data.tournament.name}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
-          {format(new Date(data.startedAt), "hh:mm|dd.MM.yyyy")}
+          {format(new Date(data.startedAt), "HH:mm|dd.MM.yyyy")}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
           winner

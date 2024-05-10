@@ -89,7 +89,7 @@ export function MatchTable({ data }: { data: IMatch[] }) {
                   {match.tournament.name}
                 </TableCell>
                 <TableCell className="whitespace-nowrap py-[10px]">
-                  {format(new Date(match.startedAt), "hh:mm|dd.MM.yyyy")}
+                  {format(new Date(match.startedAt), "HH:mm|dd.MM.yyyy")}
                 </TableCell>
                 <TableCell className="py-[10px]  capitalize">
                   {match.status === "UPCOMING" ? "Upcoming" : match.status}

@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/table";
 import VersusIcon from "@/assets/icons/versus-icon.svg";
 import { format } from "date-fns";
-import { IRecentMatch } from "@/models/recent-matches.models";
+import { Game } from "@/models/recent-matches.models";
 
-export function RecentMatches({ data }: { data: IRecentMatch[] }) {
+export function RecentMatches({ data }: { data: Game[] }) {
   return (
     <div className="float-left flex w-[48%] flex-col gap-[10px] xmd:w-full">
       <div className="relative">
@@ -36,40 +36,42 @@ export function RecentMatches({ data }: { data: IRecentMatch[] }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.slice(0, 6)?.map((match: IRecentMatch, index) => (
-            <TableRow
-              key={index}
-              className="rounded-[8px] border-b-[4px] border-[#FFF] bg-[#FACFE0] py-[14px] text-center font-serif text-[11px] text-[#000]"
-            >
-              <TableCell className="whitespace-nowrap rounded-l-[6px] py-[10px]">
-                <div className=" flex items-center gap-[5px]">
-                  <span className="min-w-[50px]">
-                    {match.competitors[0].competitor.nickname}
-                  </span>
-                  <span className="flex items-center gap-[2px]">
-                    <div className="h-[20px] w-[20px] rounded-[50%] bg-[#000]"></div>
-                    <VersusIcon className="w-[17px]" />
-                    <div className="h-[20px] w-[20px] rounded-[50%] bg-[#000]"></div>
-                  </span>
-                  <span className="min-w-[50px]">
-                    {match.competitors[1].competitor.nickname}
-                  </span>
-                </div>
-              </TableCell>
-              <TableCell className="whitespace-nowrap py-[10px]">
-                {match.tournament.name}
-              </TableCell>
-              <TableCell className="whitespace-nowrap py-[10px]">
-                Score
-              </TableCell>
-              <TableCell className="py-[10px]">
-                {format(new Date(match.endedAt), "hh:mm")}
-              </TableCell>
-              <TableCell className="rounded-r-[6px] py-[10px]">
-                {match.games[0].ufcResultDetails[0].endMethod}
-              </TableCell>
-            </TableRow>
-          ))}
+          {data.map(({ match, endedAt, ufcResultDetails }: Game, index) => {
+            return (
+              <TableRow
+                key={index}
+                className="rounded-[8px] border-b-[4px] border-[#FFF] bg-[#FACFE0] py-[14px] text-center font-serif text-[11px] text-[#000]"
+              >
+                <TableCell className="whitespace-nowrap rounded-l-[6px] py-[10px]">
+                  <div className=" flex items-center gap-[5px]">
+                    <span className="min-w-[50px]">
+                      {match.competitors[0].competitor.nickname}
+                    </span>
+                    <span className="flex items-center gap-[2px]">
+                      <div className="h-[20px] w-[20px] rounded-[50%] bg-[#000]"></div>
+                      <VersusIcon className="w-[17px]" />
+                      <div className="h-[20px] w-[20px] rounded-[50%] bg-[#000]"></div>
+                    </span>
+                    <span className="min-w-[50px]">
+                      {match.competitors[1].competitor.nickname}
+                    </span>
+                  </div>
+                </TableCell>
+                <TableCell className="whitespace-nowrap py-[10px]">
+                  {match.tournament.name}
+                </TableCell>
+                <TableCell className="whitespace-nowrap py-[10px]">
+                  Score
+                </TableCell>
+                <TableCell className="py-[10px]">
+                  {format(new Date(endedAt), "HH:mm|dd.MM.yyyy")}
+                </TableCell>
+                <TableCell className="rounded-r-[6px] py-[10px]">
+                  {ufcResultDetails[0].endMethod}
+                </TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </div>

@@ -9,7 +9,7 @@ export interface IPlayersData {
 
 export const Players_Dummy_Data: IPlayersData[] = [
   {
-    nickname: "Frozen26",
+    nickname: "Forzen26",
     name: "Denis Kozhevnikov",
     matches: 30,
     wins: 26,
@@ -17,7 +17,7 @@ export const Players_Dummy_Data: IPlayersData[] = [
     photo: "",
   },
   {
-    nickname: "Suruste",
+    nickname: "Saruste",
     name: "Artur Bondarenko",
     matches: 30,
     wins: 30,

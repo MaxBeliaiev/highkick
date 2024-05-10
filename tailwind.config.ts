@@ -25,11 +25,7 @@ const config: Config = {
         max: "1376px",
       },
     },
-    colors: {
-    },
     fontSize: {},
-    extend: {
-    },
   },
   plugins: [],
   prefix: "",

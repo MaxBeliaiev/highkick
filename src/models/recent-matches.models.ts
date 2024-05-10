@@ -15,6 +15,16 @@ export interface IRecentMatch {
   games: Array<{ ufcResultDetails: IufcResultDetails[] }>;
 }
 
+export interface Game {
+  id: number;
+  startedAt: string;
+  endedAt: string;
+  ufcResultDetails: Array<{
+    endMethod: string;
+  }>;
+  match: IRecentMatch;
+}
+
 export interface IufcResultDetails {
   id: number;
   gameId: number;

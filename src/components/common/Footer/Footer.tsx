@@ -32,10 +32,19 @@ export function Footer({
             watch selected quality matches in between real fights.
           </p>
           <p className="pt-[10px]">
-            Every day in the Round min fryranker, ahics brings the nit to
-            bettery et arording to theresults
+            Every day in the Round Robin format our players fight for the right
+            to be the best according to the results of the monthly ranked, which
+            brings them a nice monetary reward.
           </p>
-          <p>You can read the rules of the league here</p>
+          <p>
+            You can read the rules of the league{" "}
+            <a
+              className="text-blue-500 hover:underline"
+              href="https://main.d1tqew6kbimkdj.amplifyapp.com/about#:~:text=of%20the%20league-,here,-highkick.gg"
+            >
+              here
+            </a>
+          </p>
         </div>
 
         <Image
