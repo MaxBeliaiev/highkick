@@ -22,3 +22,5 @@ export default async function ResultsPage() {
     </body>
   );
 }
+
+export const revalidate = 0;
