@@ -13,6 +13,7 @@ import { ResultRow } from "@/components/index/Results/ResultRow";
 import { IRecentMatch } from "@/models/recent-matches.models";
 
 export function Results({ data }: { data: IRecentMatch[] }) {
+  console.log(data[0]);
   return (
     <section className="container mx-auto flex flex-col gap-[10px] py-[100px] xmd:py-[50px]">
       <div className="relative">

@@ -14,7 +14,7 @@ export const Players_Dummy_Data: IPlayersData[] = [
     matches: 30,
     wins: 26,
     winRate: 87,
-    photo: "",
+    photo: "https://gamebeats.s3.eu-central-1.amazonaws.com/forzen_mini.png",
   },
   {
     nickname: "Saruste",
@@ -22,6 +22,6 @@ export const Players_Dummy_Data: IPlayersData[] = [
     matches: 30,
     wins: 30,
     winRate: 100,
-    photo: "",
+    photo: "https://gamebeats.s3.eu-central-1.amazonaws.com/saruste_mini.png",
   },
 ];

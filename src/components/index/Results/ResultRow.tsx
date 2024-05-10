@@ -4,6 +4,7 @@ import Arrow from "@/assets/icons/arrow-icon.svg";
 import { useState } from "react";
 import { Game, IRecentMatch } from "@/models/recent-matches.models";
 import { format } from "date-fns";
+import { dateTimeFormat } from "@/lib/utils";
 
 export function ResultRow({ data }: { data: IRecentMatch }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +22,6 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
       ? "1 : 0"
       : "0 : 1";
   };
-
-  console.log(data.competitors);
 
   return (
     <>
@@ -47,7 +46,7 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
           {data.tournament.name}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
-          {format(new Date(data.startedAt), "HH:mm|dd.MM.yyyy")}
+          {format(new Date(data.startedAt), dateTimeFormat)}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
           {data.winner?.nickname || "Draw"}
@@ -96,7 +95,7 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
             {data.tournament.name}
           </TableCell>
           <TableCell className="whitespace-nowrap py-[10px]  text-center xmd:py-[8px]">
-            {format(new Date(game.endedAt), "HH:mm|dd.MM.yyyy")}
+            {format(new Date(game.endedAt), dateTimeFormat)}
           </TableCell>
           <TableCell className="whitespace-nowrap py-[10px] text-center">
             {game.winner?.nickname || "Draw"}

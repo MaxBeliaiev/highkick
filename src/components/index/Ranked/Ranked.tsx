@@ -12,10 +12,7 @@ import MedalIcon from "@/assets/icons/medal-icon.svg";
 import CrownIcon from "@/assets/icons/crown-icon.svg";
 import player from "@/assets/images/player.png";
 import Image from "next/image";
-import {
-  IRankedData,
-  Ranked_Dummy_Data,
-} from "@/components/index/Ranked/ranked-data";
+import { IRankedData } from "@/components/index/Ranked/ranked-data";
 
 export function Ranked({ data }: { data: IRankedData[] }) {
   return (
@@ -31,7 +28,7 @@ export function Ranked({ data }: { data: IRankedData[] }) {
         <div className="flex items-end">
           <div className="flex flex-col items-start gap-[35px] pb-[20px]">
             <div className="text-[40px] uppercase italic xmd:text-[26px]">
-              Top Player Of Week
+              P2P
             </div>
 
             <Table className="m-0 p-0 text-[22px] sm:text-[16px] ">

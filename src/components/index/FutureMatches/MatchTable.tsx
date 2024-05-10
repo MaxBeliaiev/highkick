@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 import PlayIcon from "@/assets/icons/play-icon.svg";
 import VersusIcon from "@/assets/icons/versus-icon.svg";
 import HeadingLabel from "@/assets/icons/heading-label.svg";
@@ -15,6 +16,7 @@ import { useEffect, useState } from "react";
 import { IMatch, STREAM_LINKS } from "@/models/matches.models";
 import { format } from "date-fns";
 import { getMatches } from "@/app/fetch-matches";
+import { dateTimeFormat } from "@/lib/utils";
 
 export function MatchTable({ data }: { data: IMatch[] }) {
   const pageNumbers = [1, 2, 3];
@@ -89,7 +91,7 @@ export function MatchTable({ data }: { data: IMatch[] }) {
                   {match.tournament.name}
                 </TableCell>
                 <TableCell className="whitespace-nowrap py-[10px]">
-                  {format(new Date(match.startedAt), "HH:mm|dd.MM.yyyy")}
+                  {format(new Date(match.startedAt), dateTimeFormat)}
                 </TableCell>
                 <TableCell className="py-[10px]  capitalize">
                   {match.status === "UPCOMING" ? "Upcoming" : match.status}
@@ -114,11 +116,12 @@ export function MatchTable({ data }: { data: IMatch[] }) {
             <li
               key={number}
               onClick={() => paginate(number)}
-              className={
+              className={twMerge(
+                "cursor-pointer",
                 (number == currentPage
                   ? "outline outline-[4px] outline-[#D3D3D3] "
                   : "") + " h-[10px] w-[10px] rounded-[50%] bg-[#000]"
-              }
+              )}
             ></li>
           ))}
         </ul>
