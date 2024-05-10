@@ -7,7 +7,11 @@ export function Navigation() {
 
   return (
     <>
-      <Link href="/live" className="flex items-center gap-[3px]">
+      <Link
+        href="/live"
+        prefetch={false}
+        className="flex items-center gap-[3px]"
+      >
         <span
           className={
             (pathName === "/live" ? "bg-[#00ADEF] " : "bg-[#EB1068] ") +
@@ -25,6 +29,7 @@ export function Navigation() {
       </Link>
       <Link
         href="/players"
+        prefetch={false}
         className={pathName === "/players" ? "text-[#00ADEF] " : "text-[#FFF] "}
       >
         Players
@@ -32,6 +37,7 @@ export function Navigation() {
 
       <Link
         href="/ranked"
+        prefetch={false}
         className={pathName === "/ranked" ? "text-[#00ADEF] " : "text-[#FFF] "}
       >
         Ranked
@@ -39,6 +45,7 @@ export function Navigation() {
 
       <Link
         href="/results"
+        prefetch={false}
         className={pathName === "/results" ? "text-[#00ADEF] " : "text-[#FFF] "}
       >
         Results
@@ -46,6 +53,7 @@ export function Navigation() {
 
       <Link
         href="/about"
+        prefetch={false}
         className={pathName === "/about" ? "text-[#00ADEF] " : "text-[#FFF] "}
       >
         About Us
