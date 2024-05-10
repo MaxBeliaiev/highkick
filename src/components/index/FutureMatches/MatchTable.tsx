@@ -97,9 +97,9 @@ export function MatchTable({ data }: { data: Match[] }) {
                                                 }
                                             </span>
                                             <span className="flex items-center gap-[2px]">
-                                                <div className="h-[20px] w-[20px]">
+                                                <div className="h-[20px] w-[20px] overflow-hidden rounded-[50%]">
                                                     <img
-                                                        className="h-[100%] w-[100%] rounded-[50%]"
+                                                        className="h-auto w-[100%]"
                                                         src={getCompetitorImage(
                                                             competitors[0]
                                                                 .competitor
@@ -108,9 +108,9 @@ export function MatchTable({ data }: { data: Match[] }) {
                                                     />
                                                 </div>
                                                 <VersusIcon className="w-[17px]" />
-                                                <div className="h-[20px] w-[20px]">
+                                                <div className="h-[20px] w-[20px] overflow-hidden rounded-[50%]">
                                                     <img
-                                                        className="h-[100%] w-[100%] rounded-[50%]"
+                                                        className="h-auto w-[100%]"
                                                         src={getCompetitorImage(
                                                             competitors[1]
                                                                 .competitor
