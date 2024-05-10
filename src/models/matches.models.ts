@@ -16,10 +16,12 @@ export interface ICompetitor {
   order: number;
   score: number;
   competitorId: number;
-  competitor: {
-    id: number;
-    nickname: string;
-  };
+  competitor: Competitor;
+}
+
+export interface Competitor {
+  id: number;
+  nickname: string;
 }
 
 export const STREAM_LINKS = {

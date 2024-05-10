@@ -2,7 +2,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import VersusIcon from "@/assets/icons/versus-icon.svg";
 import Arrow from "@/assets/icons/arrow-icon.svg";
 import { useState } from "react";
-import { IRecentMatch } from "@/models/recent-matches.models";
+import { Game, IRecentMatch } from "@/models/recent-matches.models";
 import { format } from "date-fns";
 
 export function ResultRow({ data }: { data: IRecentMatch }) {
@@ -11,6 +11,18 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
   function handleOpen() {
     setIsOpen(!isOpen);
   }
+
+  const getGameScore = (game: Game) => {
+    if (game.ufcResultDetails[0].isDraw) {
+      return "0 : 0";
+    }
+
+    return game.winner?.id === data.competitors[0].competitor.id
+      ? "1 : 0"
+      : "0 : 1";
+  };
+
+  console.log(data.competitors);
 
   return (
     <>
@@ -38,10 +50,10 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
           {format(new Date(data.startedAt), "HH:mm|dd.MM.yyyy")}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
-          winner
+          {data.winner?.nickname || "Draw"}
         </TableCell>
         <TableCell className="whitespace-nowrap py-[10px] text-center">
-          {data.competitors[0].score} : {data.competitors[0].score}
+          {data.competitors[0].score} : {data.competitors[1].score}
         </TableCell>
         <TableCell className="items-center rounded-r-[8px] py-[10px] text-center">
           <Arrow
@@ -54,7 +66,7 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
         </TableCell>
       </TableRow>
 
-      {data.games?.map((game, index) => (
+      {data.games?.map((game: Game, index) => (
         <TableRow
           key={index}
           className={
@@ -84,13 +96,13 @@ export function ResultRow({ data }: { data: IRecentMatch }) {
             {data.tournament.name}
           </TableCell>
           <TableCell className="whitespace-nowrap py-[10px]  text-center xmd:py-[8px]">
-            {/*{game.ufcResultDetails.}*/}
+            {format(new Date(game.endedAt), "HH:mm|dd.MM.yyyy")}
           </TableCell>
           <TableCell className="whitespace-nowrap py-[10px] text-center">
-            winner
+            {game.winner?.nickname || "Draw"}
           </TableCell>
           <TableCell className="whitespace-nowrap py-[10px]  text-center xmd:py-[8px]">
-            {/*{details.score}*/}
+            {getGameScore(game)}
           </TableCell>
           <TableCell className="rounded-r-[8px] py-[10px]  text-center xmd:py-[8px]"></TableCell>
         </TableRow>

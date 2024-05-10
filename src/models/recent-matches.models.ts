@@ -1,4 +1,4 @@
-import { ICompetitor } from "@/models/matches.models";
+import { Competitor, ICompetitor } from "@/models/matches.models";
 
 export interface IRecentMatch {
   id: number;
@@ -8,21 +8,24 @@ export interface IRecentMatch {
   streamChannel: "1" | "2";
   format: string;
   numberOfGames: number;
+  winnerId: number | null;
   competitors: ICompetitor[];
   tournament: {
     name: string;
   };
-  games: Array<{ ufcResultDetails: IufcResultDetails[] }>;
+  winner?: {
+    nickname: string;
+  };
+  games: Game[];
 }
 
 export interface Game {
   id: number;
   startedAt: string;
   endedAt: string;
-  ufcResultDetails: Array<{
-    endMethod: string;
-  }>;
+  ufcResultDetails: Array<IufcResultDetails>;
   match: IRecentMatch;
+  winner?: Competitor;
 }
 
 export interface IufcResultDetails {
@@ -31,6 +34,6 @@ export interface IufcResultDetails {
   endMethod: string;
   round: number;
   endTime: string;
-  isDraw: false;
+  isDraw: boolean;
   createdAt: string;
 }
