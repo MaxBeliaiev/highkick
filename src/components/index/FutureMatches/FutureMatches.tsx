@@ -1,19 +1,24 @@
-import { MatchTable } from "@/components/index/FutureMatches/MatchTable";
-import { TopPlayersStart } from "@/components/index/FutureMatches/TopPlayersStart";
-import { IPlayersData } from "@/components/index/FutureMatches/players-data";
-import { IMatch } from "@/models/matches.models";
+import { MatchTable } from "@/components/index/FutureMatches/MatchTable"
+import { TopPlayersStart } from "@/components/index/FutureMatches/TopPlayersStart"
+import { Competitor, Match } from "@/models/matches.models"
+import { Statistic } from "@/models/recent-matches.models"
 
 export function FutureMatches({
-  players,
-  matches,
+    matches,
+    statistics,
+    competitors,
 }: {
-  players: IPlayersData[];
-  matches: IMatch[];
+    matches: Match[]
+    statistics: Statistic[]
+    competitors: Competitor[]
 }) {
-  return (
-    <section className="container mx-auto flex w-full items-stretch justify-between py-[40px] xmd:flex-col xmd:gap-[30px] ">
-      <MatchTable data={matches} />
-      <TopPlayersStart data={players} />
-    </section>
-  );
+    return (
+        <section className="container mx-auto flex w-full items-stretch justify-between py-[40px] xmd:flex-col xmd:gap-[30px] ">
+            <MatchTable data={matches} />
+            <TopPlayersStart
+                statistics={statistics}
+                competitors={competitors}
+            />
+        </section>
+    )
 }

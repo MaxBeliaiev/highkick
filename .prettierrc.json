@@ -1,9 +1,7 @@
 {
   "trailingComma": "es5",
-  "semi": true,
-  "tabWidth": 2,
-  "singleQuote": false,
-  "jsxSingleQuote": false,
+  "semi": false,
+  "tabWidth": 4,
   "proseWrap": "always",
   "bracketSameLine": false,
   "bracketSpacing": true,

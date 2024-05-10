@@ -2,11 +2,11 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import VersusIcon from "@/assets/icons/versus-icon.svg";
 import Arrow from "@/assets/icons/arrow-icon.svg";
 import { useState } from "react";
-import { Game, IRecentMatch } from "@/models/recent-matches.models";
+import { Game, Match } from "@/models/recent-matches.models";
 import { format } from "date-fns";
 import { dateTimeFormat } from "@/lib/utils";
 
-export function ResultRow({ data }: { data: IRecentMatch }) {
+export function ResultRow({ data }: { data: Match }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleOpen() {

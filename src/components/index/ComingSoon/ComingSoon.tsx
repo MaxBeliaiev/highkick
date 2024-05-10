@@ -2,13 +2,13 @@ import ComingSoonLabel from "@/assets/icons/coming-soon-label.svg";
 import Versus from "@/assets/icons/versus.svg";
 import Link from "next/link";
 import Live from "@/assets/icons/live-icon.svg";
-import { IMatch, STREAM_LINKS } from "@/models/matches.models";
+import { Match, STREAM_LINKS } from "@/models/matches.models";
 import { format } from "date-fns";
 
-export function ComingSoon({ data }: { data: IMatch[] }) {
+export function ComingSoon({ data }: { data: Match[] }) {
   return (
     <section className="container mx-auto flex items-center justify-between py-[40px] xmd:flex-col xmd:gap-[40px] sm:py-[20px]">
-      {data.slice(0, 2)?.map((match: IMatch, index) => (
+      {data.slice(0, 2)?.map((match: Match, index) => (
         <div key={index} className="relative w-[49%] xmd:w-full ">
           <ComingSoonLabel className="z-[-1] w-full" />
           <div className="absolute left-[50%] top-[50%] z-[0] flex translate-x-[-50%] translate-y-[-50%] items-end gap-[40px] xmd:gap-[60px] md:gap-[40px] ">

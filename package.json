@@ -36,7 +36,8 @@
     "sass": "^1.69.5",
     "sharp": "^0.33.3",
     "swiper": "^11.0.5",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
