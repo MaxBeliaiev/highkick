@@ -6,7 +6,11 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import Highest from "@/assets/icons/highest-icon.svg"
 import { Statistic } from "@/models/recent-matches.models"
 import { Competitor } from "@/models/matches.models"
-import { getCompetitorImage } from "@/lib/utils"
+import {
+    getCompetitorImage,
+    getFormattedStatistics,
+    getFormattedStatsWithWinRate,
+} from "@/lib/utils"
 
 export function TopPlayersStart({
     statistics,
@@ -15,48 +19,11 @@ export function TopPlayersStart({
     statistics: Statistic[]
     competitors: Competitor[]
 }) {
-    const competitorsStats = statistics.reduce((acc: any, next) => {
-        const {
-            competitorId,
-            wins,
-            decisions,
-            submissions,
-            splitDecisions,
-            knockouts,
-            games,
-        } = next
-        if (!acc[competitorId]) {
-            acc[competitorId] = {
-                games,
-                wins,
-                decisions: decisions + splitDecisions,
-                submissions,
-                knockouts,
-                competitorId,
-            }
-        } else {
-            acc[competitorId] = {
-                games: acc[competitorId].games + next.games,
-                wins: acc[competitorId].wins + next.wins,
-                decisions:
-                    acc[competitorId].decisions +
-                    next.decisions +
-                    next.splitDecisions,
-                submissions: acc[competitorId].submissions + next.submissions,
-                knockouts: acc[competitorId].knockouts + next.knockouts,
-                competitorId,
-            }
-        }
+    const competitorsStats = getFormattedStatistics(statistics)
 
-        return acc
-    }, {})
-
-    const topWinRatePlayerData = Object.values(competitorsStats)
-        .map((stat: any) => ({
-            ...stat,
-            rate: Number(((stat.wins / stat.games) * 100).toFixed()),
-        }))
-        .sort((a, b) => b.rate - a.rate)[0]
+    const topWinRatePlayerData = getFormattedStatsWithWinRate(
+        competitorsStats
+    ).sort((a, b) => b.rate - a.rate)[0]
     const topWinRatePlayer = competitors.find(
         (competitor) => competitor.id === topWinRatePlayerData.competitorId
     )

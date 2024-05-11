@@ -15,7 +15,7 @@ import HeadingLabel from "@/assets/icons/heading-label.svg"
 import { useEffect, useState } from "react"
 import { Match, STREAM_LINKS } from "@/models/matches.models"
 import { format } from "date-fns"
-import { getMatches } from "@/app/fetch-matches"
+import { getMatches } from "@/api/fetch-matches"
 import { dateTimeFormat, getCompetitorImage } from "@/lib/utils"
 
 export function MatchTable({ data }: { data: Match[] }) {
