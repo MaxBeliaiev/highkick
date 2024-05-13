@@ -67,7 +67,7 @@ export function ComingSoon({ data }: { data: Match[] }) {
 
                             <div className="whitespace-nowrap text-center font-sans text-[#000]">
                                 <p className="text-[32px] sm:text-[24px]">
-                                    "{match.competitors[1].competitor.nickname}"
+                                    {match.competitors[1].competitor.nickname}
                                 </p>
                                 <p className="text-[20px] sm:text-[16px]">
                                     {match.competitors[1].competitor.name}{" "}

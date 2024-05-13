@@ -28,7 +28,7 @@ export function Ranked({
         (c) => c.id === topPlayerStats.competitorId
     )
 
-    const prizes = [1000, 750, 500, 300, 250, 200]
+    const prizes = [900, 600, 400, 300, 200, 100]
 
     return (
         <section className="container mx-auto flex w-full flex-col items-center pb-[90px] pt-[20px]">
