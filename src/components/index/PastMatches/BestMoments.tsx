@@ -10,10 +10,14 @@ export function BestMoments() {
         </h3>
       </div>
 
-      <div className="flex w-full grow">
-        <div className=" w-[12px] bg-[#E81068]"></div>
-        <div className="w-full  bg-[#000]"></div>
-        <div className="w-[12px] bg-[#0580C0]"></div>
+      <div className="flex w-full h-full">
+        <div className="w-[12px] bg-[#E81068]"></div>
+          <div className="w-full bg-[#000]">
+              <iframe src="https://clips.twitch.tv/embed?clip=MuddyWrongLouseFrankerZ-W9SMgxWA4LwdpXHh&parent=highkick.gg"
+                      className="w-full h-full"
+                      allowFullScreen></iframe>
+          </div>
+          <div className="w-[12px] bg-[#0580C0]"></div>
       </div>
     </div>
   );

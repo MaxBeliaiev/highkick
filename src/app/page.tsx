@@ -48,7 +48,7 @@ export default async function Home() {
                 <PastMatches matches={recentGames} />
             </main>
 
-            <Footer displayText={true} displayImage={true} />
+            <Footer displayImage={true} />
         </body>
     )
 }

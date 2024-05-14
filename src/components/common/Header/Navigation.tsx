@@ -7,26 +7,26 @@ export function Navigation() {
 
   return (
     <>
-      <Link
-        href="/live"
-        prefetch={false}
-        className="flex items-center gap-[3px]"
-      >
-        <span
-          className={
-            (pathName === "/live" ? "bg-[#00ADEF] " : "bg-[#EB1068] ") +
-            " h-[9px] w-[9px] rounded-[50%] xmd:h-[6px] xmd:w-[6px]"
-          }
-        ></span>
-        <span
-          className={
-            (pathName === "/live" ? "text-[#00ADEF] " : "text-[#EB1068] ") +
-            " font-sans text-[32px] lg:text-[24px] xmd:text-[20px]"
-          }
-        >
-          Live
-        </span>
-      </Link>
+      {/*<Link*/}
+      {/*  href="/live"*/}
+      {/*  prefetch={false}*/}
+      {/*  className="flex items-center gap-[3px]"*/}
+      {/*>*/}
+      {/*  <span*/}
+      {/*    className={*/}
+      {/*      (pathName === "/live" ? "bg-[#00ADEF] " : "bg-[#EB1068] ") +*/}
+      {/*      " h-[9px] w-[9px] rounded-[50%] xmd:h-[6px] xmd:w-[6px]"*/}
+      {/*    }*/}
+      {/*  ></span>*/}
+      {/*  <span*/}
+      {/*    className={*/}
+      {/*      (pathName === "/live" ? "text-[#00ADEF] " : "text-[#EB1068] ") +*/}
+      {/*      " font-sans text-[32px] lg:text-[24px] xmd:text-[20px]"*/}
+      {/*    }*/}
+      {/*  >*/}
+      {/*    Live*/}
+      {/*  </span>*/}
+      {/*</Link>*/}
       <Link
         href="/players"
         prefetch={false}
