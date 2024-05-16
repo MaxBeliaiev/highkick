@@ -12,6 +12,10 @@ export interface Match {
     }
 }
 
+export interface Tournament {
+    id: number
+}
+
 export interface MatchCompetitor {
     order: number
     score: number

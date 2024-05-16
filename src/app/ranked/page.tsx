@@ -8,12 +8,24 @@ import {
     getFormattedStatsWithWinRate,
 } from "@/lib/utils"
 import { getCompetitors } from "@/api/fetch-competitors"
+import { getTournaments } from "@/api/fetch-tournaments"
 
 export default async function RankedPage() {
-    // const ongoingTournament = await getTour
+    const ongoingTournaments = await getTournaments("status=ONGOING&size=1")
     const competitors = await getCompetitors()
-    const data = await getStatistics("tournamentId=110")
-    const competitorsStats = getFormattedStatsWithWinRate(
+    let tournamentId, data, competitorsStats
+
+    if (ongoingTournaments.length) {
+        tournamentId = ongoingTournaments[0].id
+    } else {
+        const finishedTournaments = await getTournaments(
+            "status=FINISHED&size=1"
+        )
+        tournamentId = finishedTournaments[0].id
+    }
+
+    data = await getStatistics(`tournamentId=${tournamentId}`)
+    competitorsStats = getFormattedStatsWithWinRate(
         getFormattedStatistics(data)
     ).sort((a, b) => b.rate - a.rate)
 
@@ -21,8 +33,10 @@ export default async function RankedPage() {
         <body>
             <Header />
             <main>
-                <Preview heading={"Ranked"} />
-                <Ranked data={competitorsStats} competitors={competitors} />
+                <>
+                    <Preview heading={"Ranked"} />
+                    <Ranked data={competitorsStats} competitors={competitors} />
+                </>
             </main>
             <Footer displayText={false} displayImage={true} />
         </body>
