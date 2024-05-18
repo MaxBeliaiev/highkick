@@ -9,6 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const dateTimeFormat = "HH:mm dd.MM.yyyy"
+export const dateFormat = "dd.MM.yyyy"
 
 export const getCompetitorImage = (competitor?: Competitor, size = "small") => {
     const imageField = size === "small" ? "imageSmall" : "image"

@@ -30,6 +30,7 @@ export interface Competitor {
     nickname: string
     image: string
     imageSmall: string
+    createdAt: string
 }
 
 export const STREAM_LINKS = {

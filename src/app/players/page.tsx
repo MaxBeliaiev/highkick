@@ -1,21 +1,22 @@
-import { Header } from "@/components/common/Header/Header";
-import { Preview } from "@/components/common/Preview/Preview";
-import { LiveNow } from "@/components/index/LiveNow/LiveNow";
-import { Live_Dummy_Data } from "@/components/index/LiveNow/live-data";
-import { Footer } from "@/components/common/Footer/Footer";
-import { Players } from "@/components/index/Players/Players";
+import { Header } from "@/components/common/Header/Header"
+import { Preview } from "@/components/common/Preview/Preview"
+import { Footer } from "@/components/common/Footer/Footer"
+import { Players } from "@/components/index/Players/Players"
+import { getCompetitors } from "@/api/fetch-competitors"
 
-export default function PlayersPage() {
-  return (
-    <body>
-      <Header />
+export default async function PlayersPage() {
+    const competitors = await getCompetitors("status=ACTIVE")
 
-      <main>
-        <Preview heading={"Players"} />
-        <Players />
-      </main>
+    return (
+        <body>
+            <Header />
 
-      <Footer displayText={false} displayImage={true} />
-    </body>
-  );
+            <main>
+                <Preview heading={"Players"} />
+                <Players competitors={competitors} />
+            </main>
+
+            <Footer displayText={false} displayImage={true} />
+        </body>
+    )
 }
