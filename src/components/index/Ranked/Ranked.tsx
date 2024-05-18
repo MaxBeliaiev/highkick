@@ -43,7 +43,7 @@ export function Ranked({
                 <div className="flex items-end">
                     <div className="flex flex-col items-start gap-[35px] pb-[20px]">
                         <div className="text-[40px] uppercase italic xmd:text-[26px]">
-                            P2P
+                            Pound 4 pound
                         </div>
 
                         <Table className="m-0 p-0 text-[22px] sm:text-[16px] ">

@@ -43,13 +43,13 @@ export function DatePicker({
 }: IDatePickerProps) {
     return (
         <div className="flex w-[350px] flex-col items-center gap-[50px] xmd:mx-auto sm:max-w-[350px] sm:gap-[20px]">
-            <div className="flex w-full flex-col items-center gap-[12px]">
+            <div className="flex w-full flex-col items-center gap-[14px]">
                 <CalendarIcon className="w-[42px]" />
 
                 <div className="flex w-full flex-col ">
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="flex w-full items-center justify-end gap-[50px] rounded-[8px] bg-[#CDE6F2] px-[22px] py-[15px] [&[data-state=open]>svg]:rotate-180">
-                            <p className="font-serif text-[20px] text-[#000] sm:text-[18px]">
+                        <DropdownMenuTrigger className="flex w-full items-center justify-center rounded-[8px] bg-[#CDE6F2] px-[22px] py-[15px] [&[data-state=open]>svg]:rotate-180">
+                            <p className="grow font-serif text-[20px] text-[#000] sm:text-[18px]">
                                 {dateTo && dateFrom
                                     ? format(dateFrom, "dd.MM.yyyy") +
                                       " - " +

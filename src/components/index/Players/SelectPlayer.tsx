@@ -8,7 +8,7 @@ import {
 import { SelectItemText } from "@radix-ui/react-select"
 import { Competitor } from "@/models/matches.models"
 import { format } from "date-fns"
-import { dateFormat } from "@/lib/utils"
+import { dateFormat, getCompetitorImage } from "@/lib/utils"
 
 export function SelectPlayer({
     color,
@@ -41,7 +41,7 @@ export function SelectPlayer({
                 </p>
 
                 <Select onValueChange={handleChange}>
-                    <SelectTrigger className="h-[56px] rounded-[8px] border-none bg-[#CDE6F2] py-[15px] pl-[130px] pr-[22px] font-serif text-[20px] text-[#000] sm:text-[18px]">
+                    <SelectTrigger className="h-[56px] rounded-[8px] border-none bg-[#CDE6F2] py-[15px] font-serif text-[20px] text-[#000] sm:text-[18px]">
                         <SelectValue placeholder="Select Player" />
                     </SelectTrigger>
                     <SelectContent className="w-[350px] border-none shadow-none outline-none sm:max-w-[350px]">
@@ -51,7 +51,13 @@ export function SelectPlayer({
                                 value={String(competitor.id)}
                                 className="flex w-full cursor-pointer gap-[17px] rounded-[8px] bg-[#FACFE0] py-[12px] pl-[70px] hover:bg-gray-400"
                             >
-                                <span className="h-[35px] w-[35px] rounded-[50%] bg-[#000]"></span>
+                                <span className="h-[35px] w-[35px] overflow-hidden rounded-[50%]">
+                                    <img
+                                        className="h-auto w-[100%]"
+                                        src={getCompetitorImage(competitor)}
+                                        alt=""
+                                    />
+                                </span>
                                 <SelectItemText className=" font-sans text-[20px] text-[#000]">
                                     {competitor.nickname}
                                 </SelectItemText>
