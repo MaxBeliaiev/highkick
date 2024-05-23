@@ -1,3 +1,4 @@
+"use client"
 import HeadingLabel from "@/assets/icons/heading-label.svg"
 import {
     Table,
