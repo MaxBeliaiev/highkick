@@ -8,7 +8,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import VersusIcon from "@/assets/icons/versus-icon.svg"
-import { format } from "date-fns"
+import { format, parseISO } from "date-fns"
 import { Game } from "@/models/recent-matches.models"
 import { dateTimeFormat, getCompetitorImage } from "@/lib/utils"
 
@@ -96,7 +96,7 @@ export function RecentMatches({ data }: { data: Game[] }) {
                                     </TableCell>
                                     <TableCell className="py-[10px]">
                                         {format(
-                                            new Date(endedAt),
+                                            parseISO(endedAt),
                                             dateTimeFormat
                                         )}
                                     </TableCell>
