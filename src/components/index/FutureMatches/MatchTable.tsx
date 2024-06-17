@@ -11,12 +11,12 @@ import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 import PlayIcon from "@/assets/icons/play-icon.svg"
 import VersusIcon from "@/assets/icons/versus-icon.svg"
-import HeadingLabel from "@/assets/icons/heading-label.svg"
 import { useEffect, useState } from "react"
 import { Match, STREAM_LINKS } from "@/models/matches.models"
 import { format } from "date-fns"
 import { getMatches } from "@/api/fetch-matches"
 import { dateTimeFormat, getCompetitorImage } from "@/lib/utils"
+import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
 
 export function MatchTable({ data }: { data: Match[] }) {
     const pageNumbers = [1, 2, 3]
@@ -46,10 +46,7 @@ export function MatchTable({ data }: { data: Match[] }) {
         <div className="float-left flex w-[48%] flex-col items-center gap-[30px] xmd:w-full">
             <div className="flex w-full flex-col gap-[10px]">
                 <div className="relative">
-                    <HeadingLabel className=" w-[538px] sm:w-full" />
-                    <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-                        Match Table
-                    </h3>
+                    <TitleLabel title={'Match Table'}/>
                 </div>
 
                 <Table>

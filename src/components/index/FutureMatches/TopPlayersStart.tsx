@@ -1,7 +1,6 @@
 import JoystickIcon from "@/assets/icons/joystick-icon.svg"
 import MedalIcon from "@/assets/icons/medal-icon.svg"
 import CrownIcon from "@/assets/icons/crown-icon.svg"
-import HeadingLabel from "@/assets/icons/heading-label.svg"
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import Highest from "@/assets/icons/highest-icon.svg"
 import { Statistic } from "@/models/recent-matches.models"
@@ -11,6 +10,7 @@ import {
     getFormattedStatistics,
     getFormattedStatsWithWinRate,
 } from "@/lib/utils"
+import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
 
 export function TopPlayersStart({
     statistics,
@@ -40,10 +40,7 @@ export function TopPlayersStart({
     return (
         <div className="float-right flex w-[48%] flex-col gap-[24px] xmd:w-full">
             <div className="relative">
-                <HeadingLabel className=" w-[538px] sm:w-full" />
-                <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-                    Top Players
-                </h3>
+                <TitleLabel title={'Top Players'}/>
             </div>
 
             <div className="flex w-full items-end justify-between gap-[70px] pl-[50px] xmd:justify-around xmd:pl-0 sm:justify-between sm:gap-[20px]">

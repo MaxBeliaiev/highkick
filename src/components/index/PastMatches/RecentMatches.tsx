@@ -1,5 +1,4 @@
 "use client"
-import HeadingLabel from "@/assets/icons/heading-label.svg"
 import {
     Table,
     TableBody,
@@ -12,15 +11,13 @@ import VersusIcon from "@/assets/icons/versus-icon.svg"
 import { format, parseISO } from "date-fns"
 import { Game } from "@/models/recent-matches.models"
 import { dateTimeFormat, getCompetitorImage } from "@/lib/utils"
+import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
 
 export function RecentMatches({ data }: { data: Game[] }) {
     return (
         <div className="float-left flex w-[48%] flex-col gap-[10px] xmd:w-full">
             <div className="relative">
-                <HeadingLabel className=" w-[538px] sm:w-full" />
-                <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-                    Our Recent Matches
-                </h3>
+                <TitleLabel title={'Our Recent Matches'}/>
             </div>
 
             <Table>

@@ -1,4 +1,3 @@
-import HeadingLabel from "@/assets/icons/heading-label.svg"
 import {
     Table,
     TableCell,
@@ -14,7 +13,11 @@ import { RankedData } from "@/components/index/Ranked/ranked-data"
 import { Competitor } from "@/models/matches.models"
 import MedalGold from "@/assets/icons/gold-medal.svg"
 import MedalSilver from "@/assets/icons/silver-medal.svg"
+import MedalBronze from "@/assets/icons/bronze-medal.svg"
+import MedalBlue from "@/assets/icons/blue-medal.svg"
+import MedalPink from "@/assets/icons/pink-medal.svg"
 import { getCompetitorImage } from "@/lib/utils"
+import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
 
 export function Ranked({
     data,
@@ -34,12 +37,8 @@ export function Ranked({
         <section className="container mx-auto flex w-full flex-col items-center pb-[90px] pt-[20px]">
             <div className="mb-2 flex w-full items-end justify-between xmd:flex-col-reverse xmd:items-start">
                 <div className="relative pb-[15px] xmd:w-full">
-                    <HeadingLabel className=" w-[538px] sm:w-full" />
-                    <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-                        All Players
-                    </h3>
+                    <TitleLabel title={'All Players'}/>
                 </div>
-
                 <div className="flex items-end">
                     <div className="flex flex-col items-start gap-[35px] pb-[20px]">
                         <div className="text-[40px] uppercase italic xmd:text-[26px]">
@@ -117,6 +116,15 @@ export function Ranked({
                                 break
                             case 1:
                                 Medal = MedalSilver
+                                break
+                            case 2:
+                                Medal = MedalBronze
+                                break
+                            case 3:
+                                Medal = MedalBlue
+                                break
+                            case 4:
+                                Medal = MedalPink
                                 break
                             default:
                                 Medal = null

@@ -1,5 +1,4 @@
 "use client"
-import HeadingLabel from "@/assets/icons/heading-label.svg"
 import {
     Table,
     TableBody,
@@ -11,15 +10,13 @@ import {
 import { Results_Dummy_Data } from "@/components/index/Results/results-data"
 import { ResultRow } from "@/components/index/Results/ResultRow"
 import { Match } from "@/models/recent-matches.models"
+import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
 
 export function Results({ data }: { data: Match[] }) {
     return (
         <section className="container mx-auto flex flex-col gap-[10px] py-[100px] xmd:py-[50px]">
             <div className="relative">
-                <HeadingLabel className=" w-[538px] sm:w-full" />
-                <h3 className="absolute left-0 top-0 z-[1] pl-[50px] font-sans text-[40px] uppercase italic text-[#FFF] sm:h-[30px] sm:pl-[30px] sm:text-[26px]">
-                    Match Table
-                </h3>
+                <TitleLabel title={'Match Table'}/>
             </div>
 
             <Table>
