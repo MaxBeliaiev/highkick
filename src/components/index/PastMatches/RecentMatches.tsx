@@ -11,7 +11,7 @@ import VersusIcon from "@/assets/icons/versus-icon.svg"
 import { format, parseISO } from "date-fns"
 import { Game } from "@/models/recent-matches.models"
 import { dateTimeFormat, getCompetitorImage } from "@/lib/utils"
-import { TitleLabel } from "@/components/ui/titleLabel/title-label"
+import { TitleLabel } from "@/components/ui/title-label"
 
 export function RecentMatches({ data }: { data: Game[] }) {
     return (

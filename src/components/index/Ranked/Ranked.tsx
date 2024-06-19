@@ -17,7 +17,7 @@ import MedalBronze from "@/assets/icons/bronze-medal.svg"
 import MedalBlue from "@/assets/icons/blue-medal.svg"
 import MedalPink from "@/assets/icons/pink-medal.svg"
 import { getCompetitorImage } from "@/lib/utils"
-import { TitleLabel } from "@/components/ui/titleLabel/title-label"
+import { TitleLabel } from "@/components/ui/title-label"
 
 export function Ranked({
     data,

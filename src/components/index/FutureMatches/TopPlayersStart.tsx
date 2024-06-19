@@ -10,7 +10,7 @@ import {
     getFormattedStatistics,
     getFormattedStatsWithWinRate,
 } from "@/lib/utils"
-import { TitleLabel } from "@/components/ui/titleLabel/title-label"
+import { TitleLabel } from "@/components/ui/title-label"
 
 export function TopPlayersStart({
     statistics,

@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"
 
 export function Navigation() {
     const pathName = usePathname()
+    const hoverEffect = "transition ease-in-out hover:scale-110 duration-300"
     return (
         <>
             <Link
@@ -15,7 +16,7 @@ export function Navigation() {
                     className={
                         (pathName === "/live"
                             ? "bg-[#00ADEF] "
-                            : "bg-[#EB1068] ") +
+                            : `${hoverEffect} bg-[#EB1068] `) +
                         " h-[9px] w-[9px] rounded-[50%] xmd:h-[6px] xmd:w-[6px]"
                     }
                 ></span>
@@ -23,7 +24,7 @@ export function Navigation() {
                     className={
                         (pathName === "/live"
                             ? "text-[#00ADEF] "
-                            : "text-[#EB1068] ") +
+                            : `${hoverEffect} text-[#EB1068] `) +
                         " font-sans text-[32px] lg:text-[24px] xmd:text-[20px]"
                     }
                 >
@@ -34,7 +35,7 @@ export function Navigation() {
                 href="/players"
                 prefetch={false}
                 className={
-                    pathName === "/players" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/players" ? "text-[#00ADEF] " : `${hoverEffect} text-[#FFF]`
                 }
             >
                 Players
@@ -43,7 +44,7 @@ export function Navigation() {
                 href="/ranked"
                 prefetch={false}
                 className={
-                    pathName === "/ranked" ? "text-[#00ADEF]" : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/ranked" ? "text-[#00ADEF]" : `${hoverEffect} text-[#FFF]`
                 }
             >
                 Ranked
@@ -53,7 +54,7 @@ export function Navigation() {
                 href="/results"
                 prefetch={false}
                 className={
-                    pathName === "/results" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/results" ? "text-[#00ADEF] " : `${hoverEffect} text-[#FFF]`
                 }
             >
                 Results
@@ -63,7 +64,7 @@ export function Navigation() {
                 href="/about"
                 prefetch={false}
                 className={
-                    pathName === "/about" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/about" ? "text-[#00ADEF] " : `${hoverEffect} text-[#FFF]`
                 }
             >
                 About Us
