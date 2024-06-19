@@ -36,7 +36,7 @@ export function Ranked({
     return (
         <section className="container mx-auto flex w-full flex-col items-center pb-[90px] pt-[20px]">
             <div className="mb-2 flex w-full items-end justify-between xmd:flex-col-reverse xmd:items-start">
-                <div className="relative pb-[15px] xmd:w-full">
+                <div className="relative xmd:w-full">
                     <TitleLabel title={'All Players'}/>
                 </div>
                 <div className="flex items-end mb-6">

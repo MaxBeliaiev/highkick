@@ -1,10 +1,9 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
+import '@/components/common/Header/Navigation.css'
 export function Navigation() {
     const pathName = usePathname()
-
     return (
         <>
             <Link
@@ -35,17 +34,16 @@ export function Navigation() {
                 href="/players"
                 prefetch={false}
                 className={
-                    pathName === "/players" ? "text-[#00ADEF] " : "text-[#FFF] "
+                    pathName === "/players" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Players
             </Link>
-
             <Link
                 href="/ranked"
                 prefetch={false}
                 className={
-                    pathName === "/ranked" ? "text-[#00ADEF] " : "text-[#FFF] "
+                    pathName === "/ranked" ? "text-[#00ADEF]" : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Ranked
@@ -55,7 +53,7 @@ export function Navigation() {
                 href="/results"
                 prefetch={false}
                 className={
-                    pathName === "/results" ? "text-[#00ADEF] " : "text-[#FFF] "
+                    pathName === "/results" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Results
@@ -65,7 +63,7 @@ export function Navigation() {
                 href="/about"
                 prefetch={false}
                 className={
-                    pathName === "/about" ? "text-[#00ADEF] " : "text-[#FFF] "
+                    pathName === "/about" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 About Us
