@@ -17,7 +17,7 @@ import MedalBronze from "@/assets/icons/bronze-medal.svg"
 import MedalBlue from "@/assets/icons/blue-medal.svg"
 import MedalPink from "@/assets/icons/pink-medal.svg"
 import { getCompetitorImage } from "@/lib/utils"
-import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
+import { TitleLabel } from "@/components/ui/titleLabel/title-label"
 
 export function Ranked({
     data,
@@ -39,8 +39,8 @@ export function Ranked({
                 <div className="relative pb-[15px] xmd:w-full">
                     <TitleLabel title={'All Players'}/>
                 </div>
-                <div className="flex items-end">
-                    <div className="flex flex-col items-start gap-[35px] pb-[20px]">
+                <div className="flex items-end mb-6">
+                    <div className="flex flex-col items-start gap-[35px] pb-[20px] mr-6">
                         <div className="text-[40px] uppercase italic xmd:text-[26px]">
                             Pound 4 pound
                         </div>
@@ -121,13 +121,12 @@ export function Ranked({
                                 Medal = MedalBronze
                                 break
                             case 3:
+                            case 4:
+                            case 5:
                                 Medal = MedalBlue
                                 break
-                            case 4:
-                                Medal = MedalPink
-                                break
                             default:
-                                Medal = null
+                                Medal = MedalPink
                         }
 
                         return (

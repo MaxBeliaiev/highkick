@@ -1,4 +1,4 @@
-import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
+import { TitleLabel } from "@/components/ui/titleLabel/title-label"
 
 export function BestMoments() {
   return (

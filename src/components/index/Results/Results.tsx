@@ -10,7 +10,7 @@ import {
 import { Results_Dummy_Data } from "@/components/index/Results/results-data"
 import { ResultRow } from "@/components/index/Results/ResultRow"
 import { Match } from "@/models/recent-matches.models"
-import { TitleLabel } from "@/components/ui/titleLabel/titleLabel"
+import { TitleLabel } from "@/components/ui/titleLabel/title-label"
 
 export function Results({ data }: { data: Match[] }) {
     return (
