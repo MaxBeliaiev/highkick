@@ -34,7 +34,7 @@ export function Navigation() {
                 href="/players"
                 prefetch={false}
                 className={
-                    pathName === "/players" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/players" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Players
@@ -43,7 +43,7 @@ export function Navigation() {
                 href="/ranked"
                 prefetch={false}
                 className={
-                    pathName === "/ranked" ? "text-[#00ADEF]" : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/ranked" ? "text-[#00ADEF]" : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Ranked
@@ -53,7 +53,7 @@ export function Navigation() {
                 href="/results"
                 prefetch={false}
                 className={
-                    pathName === "/results" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/results" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 Results
@@ -63,7 +63,7 @@ export function Navigation() {
                 href="/about"
                 prefetch={false}
                 className={
-                    pathName === "/about" ? "text-[#00ADEF] " : "transition ease-in-out delay-150 text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
+                    pathName === "/about" ? "text-[#00ADEF] " : "transition ease-in-out text-[#FFF] hover:scale-110 hover:text-[#FFF] duration-300"
                 }
             >
                 About Us

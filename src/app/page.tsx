@@ -1,4 +1,3 @@
-import { Header } from "@/components/common/Header/Header"
 import { Preview } from "@/components/common/Preview/Preview"
 import { Footer } from "@/components/common/Footer/Footer"
 import { FutureMatches } from "@/components/index/FutureMatches/FutureMatches"
@@ -34,9 +33,7 @@ export default async function Home() {
     }
 
     return (
-        <body>
-            <Header />
-
+        <>
             <main>
                 <Preview heading="Coming Soon" />
                 <ComingSoon data={ongoingMatches} />
@@ -49,7 +46,7 @@ export default async function Home() {
             </main>
 
             <Footer displayImage={true} />
-        </body>
+        </>
     )
 }
 

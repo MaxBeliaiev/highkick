@@ -1,4 +1,3 @@
-import { Header } from "@/components/common/Header/Header"
 import { Preview } from "@/components/common/Preview/Preview"
 import { Footer } from "@/components/common/Footer/Footer"
 import { Ranked } from "@/components/index/Ranked/Ranked"
@@ -30,8 +29,7 @@ export default async function RankedPage() {
     ).sort((a, b) => b.rate - a.rate)
 
     return (
-        <body>
-            <Header />
+        <>
             <main>
                 <>
                     <Preview heading={"Ranked"} />
@@ -39,6 +37,6 @@ export default async function RankedPage() {
                 </>
             </main>
             <Footer displayText={false} displayImage={true} />
-        </body>
+        </>
     )
 }

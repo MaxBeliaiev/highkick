@@ -1,4 +1,3 @@
-import { Header } from "@/components/common/Header/Header"
 import { Preview } from "@/components/common/Preview/Preview"
 import { Footer } from "@/components/common/Footer/Footer"
 import { Results } from "@/components/index/Results/Results"
@@ -10,16 +9,14 @@ export default async function ResultsPage() {
     )
 
     return (
-        <body>
-            <Header />
-
+        <>
             <main>
                 <Preview heading={"Results"} />
                 <Results data={data} />
             </main>
 
             <Footer displayText={false} displayImage={true} />
-        </body>
+        </>
     )
 }
 
