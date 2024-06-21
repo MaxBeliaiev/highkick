@@ -14,7 +14,12 @@ export function ResultRow({ data }: { data: Match }) {
     }
 
     const getGameScore = (game: Game) => {
-        if (game.ufcResultDetails[0].isDraw) {
+        console.log(game.status)
+        if (game.status === "CANCELED") {
+            return "Canceled"
+        }
+
+        if (game.ufcResultDetails[0]?.isDraw) {
             return "0 : 0"
         }
 
