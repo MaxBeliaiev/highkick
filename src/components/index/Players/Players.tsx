@@ -1,4 +1,6 @@
 "use client"
+import dayjs from "dayjs"
+import 'dayjs/locale/zh-cn'
 import { SelectPlayer } from "@/components/index/Players/SelectPlayer"
 import { DatePicker, IPlayersData } from "@/components/index/Players/DatePicker"
 import { useCallback, useEffect, useMemo, useState } from "react"
@@ -11,14 +13,18 @@ import {
 } from "@/lib/utils"
 
 export function Players({ competitors }: { competitors: Competitor[] }) {
+    const firstPlayer = competitors[0];
+    const secondPlayer = competitors[1];
+    const startDate = dayjs().toDate()
+    const endDate = dayjs().subtract(7, 'day').toDate()
     const [p1Statistics, setP1Statistics] = useState<Statistic[]>([])
     const [p2Statistics, setP2Statistics] = useState<Statistic[]>([])
     const [hasP1StatsFetched, setHasP1StatsFetched] = useState(false)
     const [hasP2StatsFetched, setHasP2StatsFetched] = useState(false)
-    const [p1Data, setP1Data] = useState<Competitor | null>(null)
-    const [p2Data, setP2Data] = useState<Competitor | null>(null)
-    const [dateFrom, setDateFrom] = useState<Date>()
-    const [dateTo, setDateTo] = useState<Date>()
+    const [p1Data, setP1Data] = useState<Competitor>(firstPlayer as Competitor)
+    const [p2Data, setP2Data] = useState<Competitor>(secondPlayer as Competitor)
+    const [dateFrom, setDateFrom] = useState<Date | undefined>(endDate)
+    const [dateTo, setDateTo] = useState<Date | undefined>(startDate)
 
     const formattedStatistics = useMemo(
         () =>

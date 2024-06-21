@@ -42,7 +42,7 @@ export function SelectPlayer({
 
                 <Select onValueChange={handleChange}>
                     <SelectTrigger className="h-[56px] rounded-[8px] border-none bg-[#CDE6F2] py-[15px] font-serif text-[20px] text-[#000] sm:text-[18px]">
-                        <SelectValue placeholder="Select Player" />
+                        {selectedCompetitor?.nickname}
                     </SelectTrigger>
                     <SelectContent className="w-[350px] border-none shadow-none outline-none sm:max-w-[350px]">
                         {competitors.map((competitor) => (

@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
+    "dayjs": "^1.11.11",
     "fs": "^0.0.1-security",
     "i": "^0.3.7",
     "lucide-react": "^0.314.0",
