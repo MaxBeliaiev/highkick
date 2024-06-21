@@ -26,6 +26,7 @@ export interface Game {
     ufcResultDetails: Array<UfcResultDetails>
     match: Match
     winner?: Competitor
+    status: "CANCELED" | "ONGOING" | "UPCOMING" | "FINISHED"
 }
 
 export interface UfcResultDetails {

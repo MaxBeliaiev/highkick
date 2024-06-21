@@ -12,7 +12,18 @@ export const dateTimeFormat = "HH:mm dd.MM.yyyy"
 export const dateFormat = "dd.MM.yyyy"
 
 export const getCompetitorImage = (competitor?: Competitor, size = "small") => {
-    const imageField = size === "small" ? "imageSmall" : "image"
+    let imageField: "imageSmall" | "imageTransparent" | "image"
+
+    switch (size) {
+        case "small":
+            imageField = "imageSmall"
+            break
+        case "transparent":
+            imageField = "imageTransparent"
+            break
+        default:
+            imageField = "image"
+    }
 
     return !competitor || !competitor[imageField]
         ? PlayerPlaceholderSmall.src
