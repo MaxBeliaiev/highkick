@@ -36,11 +36,11 @@ export function Ranked({
     return (
         <section className="container mx-auto flex w-full flex-col items-center pb-[90px] pt-[20px]">
             <div className="mb-2 flex w-full items-end justify-between xmd:flex-col-reverse xmd:items-start">
-                <div className="relative xmd:w-full">
-                    <TitleLabel title={'All Players'}/>
+                <div className="relative flex-grow xmd:w-full">
+                    <TitleLabel title={"All Players"} />
                 </div>
-                <div className="flex items-end mb-6">
-                    <div className="flex flex-col items-start gap-[35px] pb-[20px] mr-6">
+                <div className="mb-6 flex items-end">
+                    <div className="mr-6 flex flex-col items-start gap-[35px] pb-[20px]">
                         <div className="text-[40px] uppercase italic xmd:text-[26px]">
                             Pound 4 pound
                         </div>
