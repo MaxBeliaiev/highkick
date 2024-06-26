@@ -3,7 +3,6 @@ import {
     SelectContent,
     SelectItem,
     SelectTrigger,
-    SelectValue,
 } from "@/components/ui/select"
 import { SelectItemText } from "@radix-ui/react-select"
 import { Competitor } from "@/models/matches.models"
@@ -29,7 +28,7 @@ export function SelectPlayer({
     }
 
     return (
-        <div className=" flex w-[350px] flex-col items-center gap-[50px] sm:max-w-[350px] sm:gap-[20px]">
+        <div className="flex flex-col max-w-[500px] items-center gap-[50px] grow sm:max-w-[350px] lsm:w-[500px] sm:gap-[20px]">
             <div className="flex w-full flex-col gap-[6px]">
                 <p
                     className={
@@ -41,7 +40,7 @@ export function SelectPlayer({
                 </p>
 
                 <Select onValueChange={handleChange}>
-                    <SelectTrigger className="h-[56px] rounded-[8px] border-none bg-[#CDE6F2] py-[15px] font-serif text-[20px] text-[#000] sm:text-[18px]">
+                    <SelectTrigger className="h-[56px] rounded-[8px] border-none bg-[#CDE6F2] py-[15px] font-serif text-[20px] text-[#000] sm:text-[18px] lms:text-[18px]">
                         {selectedCompetitor?.nickname}
                     </SelectTrigger>
                     <SelectContent className="w-[350px] border-none shadow-none outline-none sm:max-w-[350px]">
@@ -68,7 +67,7 @@ export function SelectPlayer({
             </div>
 
             {selectedCompetitor && (
-                <div className="flex w-full flex-col items-center gap-[40px] sm:gap-[10px]">
+                <div className="flex w-full flex-col items-center gap-[40px] sm:gap-[10px] xmd:gap-[20px]">
                     <div className="flex w-full flex-col items-center gap-[16px] sm:gap-[8px]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img

@@ -1,8 +1,7 @@
 "use client"
 import dayjs from "dayjs"
 import 'dayjs/locale/zh-cn'
-import { SelectPlayer } from "@/components/index/Players/SelectPlayer"
-import { DatePicker, IPlayersData } from "@/components/index/Players/DatePicker"
+import { IPlayersData } from "@/components/index/Players/DatePicker"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Competitor } from "@/models/matches.models"
 import { getStatistics } from "@/api/fetch-statistics"
@@ -11,6 +10,9 @@ import {
     getFormattedStatistics,
     getFormattedStatsWithWinRate,
 } from "@/lib/utils"
+import { useWindowWidth } from '@react-hook/window-size'
+import { DesktopView } from "@/components/index/Players/DesktopView"
+import { MobileView } from "@/components/index/Players/MobileView"
 
 export function Players({ competitors }: { competitors: Competitor[] }) {
     const firstPlayer = competitors[0];
@@ -25,7 +27,7 @@ export function Players({ competitors }: { competitors: Competitor[] }) {
     const [p2Data, setP2Data] = useState<Competitor>(secondPlayer as Competitor)
     const [dateFrom, setDateFrom] = useState<Date | undefined>(endDate)
     const [dateTo, setDateTo] = useState<Date | undefined>(startDate)
-
+    const onlyWidth = useWindowWidth();
     const formattedStatistics = useMemo(
         () =>
             getFormattedStatsWithWinRate(
@@ -108,30 +110,9 @@ export function Players({ competitors }: { competitors: Competitor[] }) {
     ])
 
     return (
-        <section className="container mx-auto flex w-auto flex-wrap items-start justify-between gap-[50px] pb-[50px] pt-[160px] xmd:items-center xmd:justify-around xmd:pt-[120px] sm:gap-[40px] sm:pt-[40px] ">
-            <SelectPlayer
-                competitors={competitors}
-                color="bg-[#E81068]"
-                id={1}
-                setPlayer={setP1Data}
-                selectedCompetitor={p1Data}
-            />
-            <div className="xmd:order-first xmd:w-full">
-                <DatePicker
-                    dateTo={dateTo}
-                    dateFrom={dateFrom}
-                    setDateTo={setDateTo}
-                    setDateFrom={setDateFrom}
-                    statistics={getOverallStats()}
-                />
-            </div>
-            <SelectPlayer
-                competitors={competitors}
-                color="bg-[#0580C3]"
-                id={2}
-                setPlayer={setP2Data}
-                selectedCompetitor={p2Data}
-            />
-        </section>
+        onlyWidth <= 768
+            ? <MobileView competitors={competitors} statistic={getOverallStats()} setP1Data={setP1Data} p1Data={p1Data} dateTo={dateTo} dateFrom={dateFrom} setDateTo={setDateTo} setDateFrom={setDateFrom} setP2Data={setP2Data} p2Data={p2Data} />
+            : <DesktopView competitors={competitors} statistic={getOverallStats()} setP1Data={setP1Data} p1Data={p1Data} dateTo={dateTo} dateFrom={dateFrom} setDateTo={setDateTo} setDateFrom={setDateFrom} setP2Data={setP2Data} p2Data={p2Data} />
+
     )
 }

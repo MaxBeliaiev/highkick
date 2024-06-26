@@ -10,8 +10,6 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { DropdownMenu, } from "@/components/ui/dropdown-menu"
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
-import CrownIcon from "@/assets/icons/crown-icon.svg"
 
 export interface IPlayersData {
     value1?: string
@@ -24,7 +22,6 @@ interface IDatePickerProps {
     dateTo?: Date
     setDateFrom: (date?: Date) => void
     setDateTo: (date?: Date) => void
-    statistics: IPlayersData[]
 }
 
 export function DatePicker({
@@ -32,10 +29,9 @@ export function DatePicker({
     dateTo,
     setDateFrom,
     setDateTo,
-    statistics,
 }: IDatePickerProps) {
     return (
-        <div className="flex w-[350px] flex-col items-center gap-[50px] xmd:mx-auto sm:max-w-[350px] sm:gap-[20px]">
+        <div className="flex flex-col items-center gap-[50px] xmd:mx-auto sm:w-[350px] lsm:max-w-[500px] sm:gap-[20px]">
             <div className="flex w-full flex-col items-center gap-[14px]">
                 <CalendarIcon className="w-[42px]" />
 
@@ -52,7 +48,7 @@ export function DatePicker({
                                 >
                                     <Button
                                         className={cn(
-                                            " flex w-full justify-center border-none text-left font-serif text-[20px] font-normal text-[#000] shadow-none sm:text-[18px]",
+                                            " flex w-full justify-center border-none text-left font-serif text-[20px] font-normal text-[#000] shadow-none sm:text-[18px] md:text-[18px]",
                                             !dateFrom &&
                                             "text-muted-foreground"
                                         )}
@@ -95,26 +91,6 @@ export function DatePicker({
                     </DropdownMenu>
                 </div>
             </div>
-            <Table className="m-0 w-full p-0 text-[22px] sm:text-[16px] ">
-                <TableBody>
-                    {statistics?.map((data, index) => (
-                        <TableRow key={index} className="w-full border-none">
-                            <TableCell className="pl-0">
-                                {data.value1 || "N/A"}
-                            </TableCell>
-                            <TableCell className="w-[40px] pr-[10px] sm:pr-[3px]">
-                                <CrownIcon className="w-[32px] text-[#E81068]" />
-                            </TableCell>
-                            <TableCell className="whitespace-nowrap pl-[10px] sm:pl-[3px]">
-                                {data.heading}
-                            </TableCell>
-                            <TableCell className="pr-0 ">
-                                {data.value2 || "N/A"}
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
         </div>
     )
 }
