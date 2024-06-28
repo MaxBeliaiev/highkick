@@ -40,3 +40,5 @@ export default async function RankedPage() {
         </>
     )
 }
+
+export const revalidate = 0
