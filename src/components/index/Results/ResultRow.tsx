@@ -14,7 +14,6 @@ export function ResultRow({ data }: { data: Match }) {
     }
 
     const getGameScore = (game: Game) => {
-        console.log(game.status)
         if (game.status === "CANCELED") {
             return "Canceled"
         }

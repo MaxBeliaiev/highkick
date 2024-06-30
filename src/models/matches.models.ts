@@ -30,6 +30,7 @@ export interface Competitor {
     nickname: string
     image: string
     imageSmall: string
+    imageTransparent: string
     createdAt: string
 }
 

@@ -84,7 +84,7 @@ export function Ranked({
                         </Table>
                     </div>
                     <img
-                        src={getCompetitorImage(topPlayer, "big")}
+                        src={getCompetitorImage(topPlayer, "transparent")}
                         alt="Image"
                         className="w-[263px] xmd:w-[200px] sm:w-[150px]"
                     />

@@ -40,7 +40,7 @@ export function TopPlayersStart({
     return (
         <div className="float-right flex w-[48%] flex-col gap-[24px] xmd:w-full">
             <div className="relative">
-                <TitleLabel title={'Top Players'}/>
+                <TitleLabel title={"Top Players"} />
             </div>
 
             <div className="flex w-full items-end justify-between gap-[70px] pl-[50px] xmd:justify-around xmd:pl-0 sm:justify-between sm:gap-[20px]">
@@ -56,9 +56,12 @@ export function TopPlayersStart({
                     </div>
 
                     <div className="flex flex-col gap-[10px]">
-                        <div className="h-[270px] w-full bg-[#000] sm:h-[200px]">
+                        <div className="w-full sm:h-[200px]">
                             <img
-                                src={getCompetitorImage(topWinRatePlayer)}
+                                src={getCompetitorImage(
+                                    topWinRatePlayer,
+                                    "transparent"
+                                )}
                                 alt={topWinRatePlayer?.nickname}
                             />
                         </div>
@@ -125,9 +128,12 @@ export function TopPlayersStart({
                     </div>
 
                     <div className="flex flex-col gap-[10px]">
-                        <div className="h-[270px] w-full bg-[#000] sm:h-[200px]">
+                        <div className="w-full sm:h-[200px]">
                             <img
-                                src={getCompetitorImage(topKoRatePlayer)}
+                                src={getCompetitorImage(
+                                    topKoRatePlayer,
+                                    "transparent"
+                                )}
                                 alt={topKoRatePlayer?.nickname}
                             />
                         </div>
