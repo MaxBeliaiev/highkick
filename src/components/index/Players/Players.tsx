@@ -1,6 +1,6 @@
 "use client"
 import dayjs from "dayjs"
-import 'dayjs/locale/zh-cn'
+import "dayjs/locale/zh-cn"
 import { IPlayersData } from "@/components/index/Players/DatePicker"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Competitor } from "@/models/matches.models"
@@ -10,15 +10,15 @@ import {
     getFormattedStatistics,
     getFormattedStatsWithWinRate,
 } from "@/lib/utils"
-import { useWindowWidth } from '@react-hook/window-size'
+import { useWindowWidth } from "@react-hook/window-size"
 import { DesktopView } from "@/components/index/Players/DesktopView"
 import { MobileView } from "@/components/index/Players/MobileView"
 
 export function Players({ competitors }: { competitors: Competitor[] }) {
-    const firstPlayer = competitors[0];
-    const secondPlayer = competitors[1];
+    const firstPlayer = competitors[0]
+    const secondPlayer = competitors[1]
     const startDate = dayjs().toDate()
-    const endDate = dayjs().subtract(7, 'day').toDate()
+    const endDate = dayjs().subtract(7, "day").toDate()
     const [p1Statistics, setP1Statistics] = useState<Statistic[]>([])
     const [p2Statistics, setP2Statistics] = useState<Statistic[]>([])
     const [hasP1StatsFetched, setHasP1StatsFetched] = useState(false)
@@ -27,7 +27,7 @@ export function Players({ competitors }: { competitors: Competitor[] }) {
     const [p2Data, setP2Data] = useState<Competitor>(secondPlayer as Competitor)
     const [dateFrom, setDateFrom] = useState<Date | undefined>(endDate)
     const [dateTo, setDateTo] = useState<Date | undefined>(startDate)
-    const onlyWidth = useWindowWidth();
+    const onlyWidth = useWindowWidth()
     const formattedStatistics = useMemo(
         () =>
             getFormattedStatsWithWinRate(
@@ -109,10 +109,31 @@ export function Players({ competitors }: { competitors: Competitor[] }) {
         fetchSecondPlayerStats,
     ])
 
-    return (
-        onlyWidth <= 768
-            ? <MobileView competitors={competitors} statistic={getOverallStats()} setP1Data={setP1Data} p1Data={p1Data} dateTo={dateTo} dateFrom={dateFrom} setDateTo={setDateTo} setDateFrom={setDateFrom} setP2Data={setP2Data} p2Data={p2Data} />
-            : <DesktopView competitors={competitors} statistic={getOverallStats()} setP1Data={setP1Data} p1Data={p1Data} dateTo={dateTo} dateFrom={dateFrom} setDateTo={setDateTo} setDateFrom={setDateFrom} setP2Data={setP2Data} p2Data={p2Data} />
-
+    return onlyWidth <= 768 ? (
+        <MobileView
+            competitors={competitors}
+            statistic={getOverallStats()}
+            setP1Data={setP1Data}
+            p1Data={p1Data}
+            dateTo={dateTo}
+            dateFrom={dateFrom}
+            setDateTo={setDateTo}
+            setDateFrom={setDateFrom}
+            setP2Data={setP2Data}
+            p2Data={p2Data}
+        />
+    ) : (
+        <DesktopView
+            competitors={competitors}
+            statistic={getOverallStats()}
+            setP1Data={setP1Data}
+            p1Data={p1Data}
+            dateTo={dateTo}
+            dateFrom={dateFrom}
+            setDateTo={setDateTo}
+            setDateFrom={setDateFrom}
+            setP2Data={setP2Data}
+            p2Data={p2Data}
+        />
     )
 }
