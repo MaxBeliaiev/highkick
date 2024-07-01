@@ -28,15 +28,14 @@ export default async function Home() {
     )
     let ongoingMatches = await getMatches("status=ongoing&page=1")
 
-    if (!ongoingMatches.length) {
-        ongoingMatches = futureMatches.slice(0, 2)
-    }
-
     return (
         <>
             <main>
-                <Preview heading="Coming Soon" />
-                <ComingSoon data={ongoingMatches} />
+                {!ongoingMatches.length
+                    ? <Preview heading="Coming Soon" />
+                    : <Preview heading="What’s on" />
+                }
+                <ComingSoon data={ongoingMatches.length !== 0 ? ongoingMatches : futureMatches.slice(0, 2)} />
                 <FutureMatches
                     matches={futureMatches}
                     statistics={statistics}
