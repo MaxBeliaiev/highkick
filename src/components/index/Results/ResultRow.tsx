@@ -32,7 +32,7 @@ export function ResultRow({ data }: { data: Match }) {
             <TableRow className="rounded-[8px] border-b-[4px] border-[#FFF] bg-[#CDE6F2] py-[14px] text-center font-serif text-[14px] text-[#000] xmd:text-[11px]">
                 <TableCell className="min-w-[70px] rounded-l-[8px] text-center font-sans xmd:min-w-[60px]"></TableCell>
                 <TableCell className="whitespace-nowrap py-[10px] text-center">
-                    <div className=" flex items-center justify-center gap-[8px] xmd:gap-[5px]">
+                    <div className="flex items-center justify-center gap-[8px] xmd:gap-[5px]">
                         <span className="min-w-[70px] md:min-w-[50px]">
                             {data.competitors[0].competitor.nickname}
                         </span>
@@ -97,7 +97,7 @@ export function ResultRow({ data }: { data: Match }) {
                         Game {index + 1}
                     </TableCell>
                     <TableCell className="whitespace-nowrap py-[10px] text-center xmd:py-[8px]">
-                        <div className=" flex items-center gap-[8px] xmd:gap-[5px]">
+                        <div className="flex items-center justify-center gap-[8px] xmd:gap-[5px]">
                             <span className="min-w-[70px] md:min-w-[50px]">
                                 {data.competitors[0].competitor.nickname}
                             </span>
