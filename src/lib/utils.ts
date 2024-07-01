@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { Competitor } from "@/models/matches.models"
 import PlayerPlaceholderSmall from "@/assets/images/player_placeholder_mini.jpg"
+import Silhouette from "@/assets/images/silhouette_1.png"
 import { Statistic } from "@/models/recent-matches.models"
 
 export function cn(...inputs: ClassValue[]) {
@@ -16,6 +17,8 @@ export const getCompetitorImage = (
     size: "small" | "transparent" | "big" = "small"
 ) => {
     let imageField: "imageSmall" | "imageTransparent" | "image"
+    let placeholder =
+        size === "transparent" ? Silhouette.src : PlayerPlaceholderSmall.src
 
     switch (size) {
         case "small":
@@ -29,7 +32,7 @@ export const getCompetitorImage = (
     }
 
     return !competitor || !competitor[imageField]
-        ? PlayerPlaceholderSmall.src
+        ? placeholder
         : competitor[imageField]
 }
 

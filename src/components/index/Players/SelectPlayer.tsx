@@ -8,6 +8,7 @@ import { SelectItemText } from "@radix-ui/react-select"
 import { Competitor } from "@/models/matches.models"
 import { format } from "date-fns"
 import { dateFormat, getCompetitorImage } from "@/lib/utils"
+import Silhouette from "@/assets/images/silhouette_1.png"
 
 export function SelectPlayer({
     color,
@@ -71,7 +72,10 @@ export function SelectPlayer({
                     <div className="flex w-full flex-col items-center gap-[16px] sm:gap-[8px]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src={selectedCompetitor.imageTransparent}
+                            src={
+                                selectedCompetitor.imageTransparent ||
+                                Silhouette.src
+                            }
                             alt="Image"
                             width={358}
                             height={536}
