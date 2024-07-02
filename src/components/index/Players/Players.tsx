@@ -67,6 +67,11 @@ export function Players({ competitors }: { competitors: Competitor[] }) {
                 value2: p2Stats?.knockouts,
             },
             {
+                heading: "Submissions",
+                value1: p1Stats?.submissions,
+                value2: p2Stats?.submissions,
+            },
+            {
                 heading: "Win Rate",
                 value1: p1Stats && `${p1Stats.rate}%`,
                 value2: p2Stats && `${p2Stats.rate}%`,
