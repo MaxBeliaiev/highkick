@@ -78,8 +78,8 @@ export function ResultRow({ data }: { data: Match }) {
                     <Arrow
                         onClick={handleOpen}
                         className={
-                            (isOpen ? "rotate-[180deg] " : "") +
-                            " w-[21px] transition-all xmd:w-[17px]"
+                            (isOpen ? "mx-auto rotate-[180deg] " : "") +
+                            "mx-auto w-[21px] transition-all xmd:w-[17px]"
                         }
                     />
                 </TableCell>
@@ -139,7 +139,7 @@ export function ResultRow({ data }: { data: Match }) {
                     <TableCell className="whitespace-nowrap py-[10px]  text-center xmd:py-[8px]">
                         {getGameScore(game)}
                     </TableCell>
-                    <TableCell className="rounded-r-[8px] py-[10px] text-left xmd:py-[8px]">
+                    <TableCell className="rounded-r-[8px] py-[10px] text-center xmd:py-[8px]">
                         {game.ufcResultDetails[0].endMethod}
                     </TableCell>
                 </TableRow>
