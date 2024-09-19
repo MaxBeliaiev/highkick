@@ -17,16 +17,17 @@ import { MobileView } from "@/components/index/Players/MobileView"
 export function Players({ competitors }: { competitors: Competitor[] }) {
     const firstPlayer = competitors[0]
     const secondPlayer = competitors[1]
-    const startDate = dayjs().toDate()
-    const endDate = dayjs().subtract(7, "day").toDate()
+    const startDate = dayjs("2024-08-12T00:00:00.000Z").toDate()
+    console.log(startDate)
+    const endDate = dayjs(startDate).add(7, "day").toDate()
     const [p1Statistics, setP1Statistics] = useState<Statistic[]>([])
     const [p2Statistics, setP2Statistics] = useState<Statistic[]>([])
     const [hasP1StatsFetched, setHasP1StatsFetched] = useState(false)
     const [hasP2StatsFetched, setHasP2StatsFetched] = useState(false)
     const [p1Data, setP1Data] = useState<Competitor>(firstPlayer as Competitor)
     const [p2Data, setP2Data] = useState<Competitor>(secondPlayer as Competitor)
-    const [dateFrom, setDateFrom] = useState<Date | undefined>(endDate)
-    const [dateTo, setDateTo] = useState<Date | undefined>(startDate)
+    const [dateFrom, setDateFrom] = useState<Date | undefined>(startDate)
+    const [dateTo, setDateTo] = useState<Date | undefined>(endDate)
     const onlyWidth = useWindowWidth()
     const formattedStatistics = useMemo(
         () =>

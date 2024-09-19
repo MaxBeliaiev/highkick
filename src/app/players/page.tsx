@@ -8,7 +8,7 @@ export default async function PlayersPage() {
 
     return (
         <>
-            <main>
+            <main suppressHydrationWarning>
                 <Preview heading={"Players"} />
                 <Players competitors={competitors} />
             </main>

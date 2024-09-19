@@ -6,33 +6,35 @@ import { Competitor } from "@/models/matches.models"
 import { Dispatch, SetStateAction } from "react"
 
 interface DesktopViewProps {
-    dateFrom?: Date,
-    dateTo?: Date,
-    setDateFrom: (date?: Date) => void,
-    setDateTo: (date?: Date) => void,
-    competitors: Competitor[],
-    setP1Data: Dispatch<SetStateAction<Competitor>>,
-    p1Data: Competitor,
-    setP2Data: Dispatch<SetStateAction<Competitor>>,
-    p2Data: Competitor,
+    dateFrom?: Date
+    dateTo?: Date
+    setDateFrom: (date?: Date) => void
+    setDateTo: (date?: Date) => void
+    competitors: Competitor[]
+    setP1Data: Dispatch<SetStateAction<Competitor>>
+    p1Data: Competitor
+    setP2Data: Dispatch<SetStateAction<Competitor>>
+    p2Data: Competitor
     statistic?: Array<IPlayersData>
 }
 
 export function DesktopView({
-                                competitors,
-                                setP1Data,
-                                p1Data,
-                                dateTo,
-                                setDateTo,
-                                setDateFrom,
-                                dateFrom,
-                                statistic,
-                                setP2Data,
-                                p2Data,
-                            }: DesktopViewProps) {
+    competitors,
+    setP1Data,
+    p1Data,
+    dateTo,
+    setDateTo,
+    setDateFrom,
+    dateFrom,
+    statistic,
+    setP2Data,
+    p2Data,
+}: DesktopViewProps) {
     return (
         <section
-            className="container mx-auto flex flex-row w-auto items-start justify-between gap-[50px] pb-[50px] pt-[160px] xmd:items-start xmd:justify-between xmd:pt-[120px] sm:gap-[40px] sm:pt-[40px] ">
+            suppressHydrationWarning
+            className="container mx-auto flex w-auto flex-row items-start justify-between gap-[50px] pb-[50px] pt-[160px] xmd:items-start xmd:justify-between xmd:pt-[120px] sm:gap-[40px] sm:pt-[40px] "
+        >
             <SelectPlayer
                 competitors={competitors}
                 color="bg-[#E81068]"
@@ -40,7 +42,7 @@ export function DesktopView({
                 setPlayer={setP1Data}
                 selectedCompetitor={p1Data}
             />
-            <div className="flex flex-col md:max-w-[220px] gap-[50px]">
+            <div className="flex flex-col gap-[50px] md:max-w-[220px]">
                 <div className="xmd:order-first xmd:w-full">
                     <DatePicker
                         dateTo={dateTo}
@@ -49,13 +51,15 @@ export function DesktopView({
                         setDateFrom={setDateFrom}
                     />
                 </div>
-                <div
-                    className="flex flex-col items-center xmd:mx-auto sm:max-w-[350px] sm:gap-[20px]">
-                    <Table className="m-0 w-full p-0 text-[22px] sm:text-[16px] md:text-[18px]">
+                <div className="flex flex-col items-center xmd:mx-auto sm:max-w-[350px] sm:gap-[20px]">
+                    <Table className="m-0 w-full p-0 text-[22px] md:text-[18px] sm:text-[16px]">
                         <TableBody>
                             {statistic?.map((data, index) => (
-                                <TableRow key={index} className="w-full border-none">
-                                    <TableCell className="pl-0 w-[80px]">
+                                <TableRow
+                                    key={index}
+                                    className="w-full border-none"
+                                >
+                                    <TableCell className="w-[80px] pl-0">
                                         {data.value1 || "N/A"}
                                     </TableCell>
                                     <TableCell className="w-[40px] pr-[10px] sm:pr-[3px]">
