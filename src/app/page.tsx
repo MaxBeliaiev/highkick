@@ -16,7 +16,7 @@ export default async function Home() {
         "status=finished&sortBy=endedAt&sort=desc&page=1"
     )
 
-    const statsStart = moment()
+    const statsStart = moment("12/08/2024", "DD/MM/YYYY")
         .utc()
         .subtract(7, "days")
         .startOf("day")
@@ -31,11 +31,18 @@ export default async function Home() {
     return (
         <>
             <main>
-                {!ongoingMatches.length
-                    ? <Preview heading="Coming Soon" />
-                    : <Preview heading="What’s on" />
-                }
-                <ComingSoon data={ongoingMatches.length !== 0 ? ongoingMatches : futureMatches.slice(0, 2)} />
+                {!ongoingMatches.length ? (
+                    <Preview heading="Coming Soon" />
+                ) : (
+                    <Preview heading="What’s on" />
+                )}
+                <ComingSoon
+                    data={
+                        ongoingMatches.length !== 0
+                            ? ongoingMatches
+                            : futureMatches.slice(0, 2)
+                    }
+                />
                 <FutureMatches
                     matches={futureMatches}
                     statistics={statistics}
